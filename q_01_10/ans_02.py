@@ -16,7 +16,7 @@ img = cv2.imread("imori.jpg").astype(np.float32)
 
 img_gray = BGR2gray(img).astype("uint8")
 
-cv2.imwrite("out_02.jpg", img_gray)
+cv2.imwrite(r"out\out_02.jpg", img_gray)
 cv2.imshow("", img_gray)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
