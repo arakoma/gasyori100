@@ -13,14 +13,16 @@ def ave_pooling(img, n=0, s=0):
         for i in range(gy):
             for j in range(gx):
                 for k in range(c):
-                    out[n*i:n*(i+1), n*j:n*(j+1), k] = np.mean(out[n*i:n*(i+1), n*j:n*(j+1), k])
+                    out[n*i:n*(i+1), n*j:n*(j+1), k] \
+                        = np.mean(out[n*i:n*(i+1), n*j:n*(j+1), k])
     elif s:
         dy = h // s
         dx = w // s
         for i in range(s):
             for j in range(s):
                 for k in range(c):
-                    out[dy*i:dy*(i+1), dx*j:dx*(j+1), k] = np.mean(out[dy*i:dy*(i+1), dx*j:dx*(j+1), k])
+                    out[dy*i:dy*(i+1), dx*j:dx*(j+1), k] \
+                        = np.mean(out[dy*i:dy*(i+1), dx*j:dx*(j+1), k])
     
     return out
 
