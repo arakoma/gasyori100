@@ -4,8 +4,13 @@ import numpy as np
 
 #n*n画素ごとに分割する or s*s個に分割する
 def ave_pooling(img, n=0, s=0):
-    out = img.copy()
-    h, w, c = img.shape
+    if len(img.shape) == 3:
+        out = img.copy()
+    if len(img.shape) == 2:
+        out = img.copy()
+        out = np.expand_dims(out, -1)
+
+    h, w, c = out.shape
 
     if n:
         gy = h // n

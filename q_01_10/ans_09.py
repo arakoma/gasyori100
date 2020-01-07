@@ -5,7 +5,7 @@ import numpy as np
 def gaussian_filter(img_, k_size, s):
     if len(img_.shape) == 3:
         img = img_.copy()
-    if len(img.shape) == 2:
+    if len(img_.shape) == 2:
         img = img_.copy()
         img = np.expand_dims(img, -1)
 
