@@ -31,10 +31,10 @@ def gaussian_filter(img_, k_size, s):
     #filtering
     out = np.zeros((H+pad*2, W+pad*2, C)).astype(np.float32)
 
-    for y in range(pad, H+pad):
-        for x in range(pad, W+pad):
+    for y in range(H):
+        for x in range(W):
             for c in range(C):
-                out[y, x, c] = np.sum(img_pad[y-pad:y-pad+k_size, x-pad:x-pad+k_size, c] * kernel)
+                out[y+pad, x+pad, c] = np.sum(img_pad[y:y+k_size, x:x+k_size, c] * kernel)
     
     #padding除去
     out = out[pad:H+pad, pad:W+pad]
