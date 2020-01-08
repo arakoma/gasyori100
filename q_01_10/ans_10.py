@@ -3,12 +3,12 @@ import numpy as np
 
 
 def median_filter(img_, k_size):
-    if len(img_.shape) == 3:
-        img = img_.copy()
     if len(img_.shape) == 2:
         img = img_.copy()
         img = np.expand_dims(img, -1)
-
+    else:
+        img = img_.copy()
+    
     k = k_size
     H, W, C = img.shape    
     pad = k_size // 2
