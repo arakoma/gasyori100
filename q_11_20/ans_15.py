@@ -27,8 +27,8 @@ def sobel_filter(img_, k_size=3):
     img_pad[pad:H+pad, pad:W+pad] = img
 
     #kernel (vertically and horizontally)
-    kernel_v = np.array([[1, 2, 1], [0, 0, 0], [-1, -2, -1]]).astype(np.float32)
-    kernel_h = np.array([[1, 0, -1], [2, 0, -2], [1, 0, -1]]).astype(np.float32)
+    kernel_v = np.array([[-1, -2, -1], [0, 0, 0], [1, 2, 1]]).astype(np.float32)
+    kernel_h = np.array([[-1, 0, 1], [-2, 0, 2], [-1, 0, 1]]).astype(np.float32)
 
     #filtering (vertically and horizontally)
     out_v = np.zeros((H+pad*2, W+pad*2, C)).astype(np.float32)
